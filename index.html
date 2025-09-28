@@ -2,44 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Web Application</title>
+    <title>My Web Interface</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
         }
         header {
-            background: #333;
+            background-color: #333;
             color: white;
             padding: 1rem;
             text-align: center;
         }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background: #666;
+        }
         main {
             padding: 2rem;
         }
-        form {
-            max-width: 300px;
-            margin: auto;
-            background: white;
+        section {
+            margin: 2rem 0;
             padding: 1.5rem;
+            background: white;
             border-radius: 8px;
             box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
         }
-        input[type="text"], input[type="password"], button {
+        form input, form textarea, form button {
             width: 100%;
-            padding: 0.8rem;
             margin: 0.5rem 0;
+            padding: 0.8rem;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        button {
+        form button {
             background: #333;
             color: white;
             cursor: pointer;
         }
-        button:hover {
+        form button:hover {
             background: #555;
         }
     </style>
@@ -47,20 +58,35 @@
 <body>
 
     <header>
-        <h1>Welcome to My Web App</h1>
+        <h1>Welcome to My Web Application</h1>
     </header>
 
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <main>
-        <h2 style="text-align:center;">Login</h2>
-        <form action="/login" method="POST">
-            <label>Username:</label>
-            <input type="text" name="username" placeholder="Enter Username" required>
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is a simple web interface example. You can add more pages and content as needed.</p>
+        </section>
 
-            <label>Password:</label>
-            <input type="password" name="password" placeholder="Enter Password" required>
+        <section id="about">
+            <h2>About</h2>
+            <p>This application is created for practice purposes. It includes basic navigation, content sections, and a contact form.</p>
+        </section>
 
-            <button type="submit">Login</button>
-        </form>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="/submit" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
     </main>
 
 </body>
