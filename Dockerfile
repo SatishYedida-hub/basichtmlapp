@@ -1,3 +1,2 @@
 FROM httpd
-WORKDIR /app
-COPY . .
+COPY . /usr/local/apache2/htdocs/
